@@ -112,7 +112,7 @@ $(document).ready(function() {
 
   $("#work-carousel1").owlCarousel({
       // Most important owl features
-      items : 5,
+      items : 4,
       itemsCustom : false,
       itemsDesktop : [1199,4],
       itemsDesktopSmall : [980,3],
