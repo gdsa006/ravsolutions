@@ -16,9 +16,9 @@
      data: new FormData(this),
      processData: false,
      contentType: false,
-     success: function (data, status)
+     success: function (result)
      {
-      console.log(data);
+      console.log(result);
       $('.mailForm').find("input[type=text],input[type=email], textarea").val("");
 /*      $('.notification').show();
 
