@@ -4,7 +4,35 @@
  * 
  */
 
- 
+ $(document).on("submit", "form", function(event)
+ {
+   event.preventDefault();
+   $('.sendingMail').show()     
+   $('.sendMail').hide()     
+   $.ajax({
+     url: $(this).attr("action"),
+     type: $(this).attr("method"),
+     dataType: "JSON",
+     data: new FormData(this),
+     processData: false,
+     contentType: false,
+     success: function (data, status)
+     {
+      console.log(data);
+      $('.mailForm').find("input[type=text],input[type=email], textarea").val("");
+/*      $('.notification').show();
+
+*/  $('.mailSent').show();     
+    $('.mailSent').fadeOut(4000);
+$('.sendMail').delay(4001).show(0);    
+$('.sendingMail').hide();     
+/*      $('.notification').fadeOut(5000);
+*/    },
+error: function (xhr, desc, err)
+{}
+});        
+ });
+
 
 
  // transparent header on scroll 
