@@ -8,7 +8,7 @@
  {
   setTimeout(function () {
       alert('mail sent successfully!');
-  }, 1000);
+  }, 2000);
    event.preventDefault();
    $('.sendingMail').hide()     
    $('.sendMail').show()     
