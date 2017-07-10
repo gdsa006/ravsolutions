@@ -6,7 +6,7 @@
 
  $(document).on("submit", "form", function(event)
  {
-   
+
    $.ajax({
      url: $(this).attr("action"),
      type: $(this).attr("method"),
@@ -14,11 +14,21 @@
      data: new FormData(this),
      processData: false,
      contentType: false,
-     success:function(data){
-       $("#mail-status").html(data);
-     },
-     error:function (){}
-   });        
+    
+     // using the done promise callback
+               .done(function(data) {
+                   // log data to the console so we can see
+               if ( ! data.success) {
+                   console.log(data);
+                   alert('sent');
+               } else {
+                   console.log(data);
+               }
+
+           });
+
+
+
  });
 
 
