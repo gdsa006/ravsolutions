@@ -6,7 +6,9 @@
 
  $(document).on("submit", "form", function(event)
  {
-
+   event.preventDefault();
+   $('.sendingMail').show()     
+   $('.sendMail').hide()     
    $.ajax({
      url: $(this).attr("action"),
      type: $(this).attr("method"),
@@ -14,21 +16,21 @@
      data: new FormData(this),
      processData: false,
      contentType: false,
-    
-     // using the done promise callback
-               .done(function(data) {
-                   // log data to the console so we can see
-               if ( ! data.success) {
-                   console.log(data);
-                   alert('sent');
-               } else {
-                   console.log(data);
-               }
+     success: function (data, status)
+     {
+      console.log(data);
+      $('.mailForm').find("input[type=text],input[type=email], textarea").val("");
+/*      $('.notification').show();
 
-           });
-
-
-
+*/  $('.mailSent').show();     
+$('.mailSent').fadeOut(4000);
+$('.sendMail').delay(4001).show(0);    
+$('.sendingMail').hide();     
+/*      $('.notification').fadeOut(5000);
+*/    },
+error: function (xhr, desc, err)
+{}
+});        
  });
 
 
