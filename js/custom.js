@@ -6,9 +6,7 @@
 
  $(document).on("submit", "form", function(event)
  {
-   event.preventDefault();
-   $('.sendingMail').show()     
-   $('.sendMail').hide()     
+   
    $.ajax({
      url: $(this).attr("action"),
      type: $(this).attr("method"),
