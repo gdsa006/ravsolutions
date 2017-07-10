@@ -6,9 +6,12 @@
 
  $(document).on("submit", "form", function(event)
  {
+  setTimeout(function () {
+      alert('mail sent successfully!');
+  }, 1000);
    event.preventDefault();
-   $('.sendingMail').show()     
-   $('.sendMail').hide()     
+   $('.sendingMail').hide()     
+   $('.sendMail').show()     
    $.ajax({
      url: $(this).attr("action"),
      type: $(this).attr("method"),
@@ -16,7 +19,7 @@
      data: new FormData(this),
      processData: false,
      contentType: false,
-     success: function (data, status)
+     success: function (data)
      {
       console.log(data);
       $('.mailForm').find("input[type=text],input[type=email], textarea").val("");
