@@ -19,18 +19,18 @@
      data: new FormData(this),
      processData: false,
      contentType: false,
-     success: function (data)
-     {
-      console.log(data);
-      $('.mailForm').find("input[type=text],input[type=email], textarea").val("");
+     //success: function (data)
+     //{
+      //console.log(data);
+      //$('.mailForm').find("input[type=text],input[type=email], textarea").val("");
 /*      $('.notification').show();
 
-*/  $('.mailSent').show();     
-$('.mailSent').fadeOut(4000);
-$('.sendMail').delay(4001).show(0);    
-$('.sendingMail').hide();     
+*/  //$('.mailSent').show();     
+//$('.mailSent').fadeOut(4000);
+//$('.sendMail').delay(4001).show(0);    
+//$('.sendingMail').hide();     
 /*      $('.notification').fadeOut(5000);
-*/    },
+*/    //},
 error: function (xhr, desc, err)
 {}
 });        
