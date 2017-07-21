@@ -6,9 +6,9 @@
 
  $(document).on("submit", "form", function(event)
  {
- // setTimeout(function () {
-   //   alert('mail sent successfully!');
-  //}, 2000);
+ setTimeout(function () {
+     alert('mail sent successfully!');
+  }, 2000);
    event.preventDefault();
    $('.sendingMail').hide()     
    $('.sendMail').show()     
